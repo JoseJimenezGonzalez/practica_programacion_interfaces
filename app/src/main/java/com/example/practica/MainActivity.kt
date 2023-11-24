@@ -5,9 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
-import android.widget.Button
 import android.widget.ImageView
-import android.widget.Toast
 import com.example.practica.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -68,7 +66,10 @@ class MainActivity : AppCompatActivity() {
         inicializarMapaPosicionImagen()
 
         //Barajamos para que sea aleatorio
-        barajarTablero()
+        barajarCartas()
+
+        //Iniciar vidas
+        iniciarVidas()
 
         //Configuramos los botones
         configurarBotones()
@@ -78,7 +79,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun barajarTablero() {
+    private fun iniciarVidas() {
+        binding.tvLife.text = "Vidas: $vidas"
+    }
+
+    private fun barajarCartas() {
         tablero[0].shuffle()
         tablero[1].shuffle()
         tablero[2].shuffle()
@@ -87,45 +92,45 @@ class MainActivity : AppCompatActivity() {
 
     private fun configurarBotones() {
         binding.iv1.setOnClickListener {
-            procesarClicEnTarjeta(posicionescartas[0], binding.iv1)
+            procesarClickEnCarta(posicionescartas[0], binding.iv1)
 
         }
         binding.iv2.setOnClickListener {
-            procesarClicEnTarjeta(posicionescartas[1], binding.iv2)
+            procesarClickEnCarta(posicionescartas[1], binding.iv2)
         }
         binding.iv3.setOnClickListener {
-            procesarClicEnTarjeta(posicionescartas[2], binding.iv3)
+            procesarClickEnCarta(posicionescartas[2], binding.iv3)
         }
         binding.iv4.setOnClickListener {
-            procesarClicEnTarjeta(posicionescartas[3], binding.iv4)
+            procesarClickEnCarta(posicionescartas[3], binding.iv4)
         }
         binding.iv5.setOnClickListener {
-            procesarClicEnTarjeta(posicionescartas[4], binding.iv5)
+            procesarClickEnCarta(posicionescartas[4], binding.iv5)
         }
         binding.iv6.setOnClickListener {
-            procesarClicEnTarjeta(posicionescartas[5], binding.iv6)
+            procesarClickEnCarta(posicionescartas[5], binding.iv6)
         }
         binding.iv7.setOnClickListener {
-            procesarClicEnTarjeta(posicionescartas[6], binding.iv7)
+            procesarClickEnCarta(posicionescartas[6], binding.iv7)
         }
         binding.iv8.setOnClickListener {
-            procesarClicEnTarjeta(posicionescartas[7], binding.iv8)
+            procesarClickEnCarta(posicionescartas[7], binding.iv8)
         }
         binding.iv9.setOnClickListener {
-            procesarClicEnTarjeta(posicionescartas[8], binding.iv9)
+            procesarClickEnCarta(posicionescartas[8], binding.iv9)
         }
         binding.iv10.setOnClickListener {
-            procesarClicEnTarjeta(posicionescartas[9], binding.iv10)
+            procesarClickEnCarta(posicionescartas[9], binding.iv10)
         }
         binding.iv11.setOnClickListener {
-            procesarClicEnTarjeta(posicionescartas[10], binding.iv11)
+            procesarClickEnCarta(posicionescartas[10], binding.iv11)
         }
         binding.iv12.setOnClickListener {
-            procesarClicEnTarjeta(posicionescartas[11], binding.iv12)
+            procesarClickEnCarta(posicionescartas[11], binding.iv12)
         }
     }
 
-    private fun procesarClicEnTarjeta(par: Pair<Int, Int>, iv: ImageView) {
+    private fun procesarClickEnCarta(par: Pair<Int, Int>, iv: ImageView) {
         // Si es la primera carta seleccionada
         if (primeraCartaSeleccionada == null) {
             primeraCartaSeleccionada = par
