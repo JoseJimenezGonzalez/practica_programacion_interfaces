@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         Pair(2, 2),
         Pair(3, 0),
         Pair(3, 1),
-        Pair(3, 2),
+        Pair(3, 2)
     )
 
     val tablero: Array<Array<String>> = arrayOf(
@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         "C" to R.drawable.intuition,
         "D" to R.drawable.mox_diamond,
         "E" to R.drawable.mox_sapphire,
-        "F" to R.drawable.vampiric_tutor,
+        "F" to R.drawable.vampiric_tutor
     )
 
     var primeraCartaSeleccionada: Pair<Int, Int>? = null
@@ -74,6 +74,11 @@ class MainActivity : AppCompatActivity() {
         //Configuramos los botones
         configurarBotones()
 
+        //Configurar boton reiniciar
+        configurarBotonReiniciar()
+    }
+
+    private fun configurarBotonReiniciar() {
         binding.btnVolverAJugar.setOnClickListener {
             recreate()
         }
