@@ -173,7 +173,6 @@ class MainActivity : AppCompatActivity() {
                     //Comprobamos si hemos ganado
                     if (aciertos == 6){
                         binding.clInvisible.visibility = View.VISIBLE
-                        binding.clInvisible.setBackgroundColor(Color.parseColor("#3366FF"))
                         binding.tvMensajeFinalJuego.text = "¡Has ganado!"
                     }
                 } else {
@@ -198,7 +197,6 @@ class MainActivity : AppCompatActivity() {
                     binding.tvLife.text = "Vidas: $vidas"
                     if(vidas == 0){
                         binding.clInvisible.visibility = View.VISIBLE
-                        binding.clInvisible.setBackgroundColor(Color.parseColor("#3366FF"))
                         binding.tvMensajeFinalJuego.text = "Has perdido"
                     }
                 }
