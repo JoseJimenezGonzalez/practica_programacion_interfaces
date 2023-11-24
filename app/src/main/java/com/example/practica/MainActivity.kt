@@ -133,6 +133,8 @@ class MainActivity : AppCompatActivity() {
             //Le damos la vuelta a la primera carta
             val recursoId = mapaTableroImagen[valorPrimeraCartaGirada] ?: 0
             iv.setImageResource(recursoId)
+            //Impido que pueda darle de nuevo a esta carta
+            iv.isClickable = false
         } else {
             // Si es la segunda carta seleccionada
             segundaCartaSeleccionada = par
@@ -150,6 +152,15 @@ class MainActivity : AppCompatActivity() {
                     segundaCartaSeleccionada = null
                     valorSegundaCartaGirada = ""
                     aciertos++
+                    //Le quitamos el que sea clickable
+                    //primera carta
+                    val idIvPrimeraCarta = mapaPosicionImagen[primeraCartaSeleccionada]
+                    if (idIvPrimeraCarta != null) {
+                        idIvPrimeraCarta.isClickable = false
+                    }
+                    //Segunda carta
+                    iv.isClickable = false
+                    //Comprobamos si hemos ganado
                     if (aciertos == 6){
                         binding.clInvisible.visibility = View.VISIBLE
                         binding.clInvisible.setBackgroundColor(Color.parseColor("#3366FF"))
@@ -161,6 +172,10 @@ class MainActivity : AppCompatActivity() {
                     // Con la posición de la primera carta podemos ponerla de nuevo boca abajo
                     val idIvPrimeraCarta = mapaPosicionImagen[primeraCartaSeleccionada]
                     idIvPrimeraCarta?.setImageResource(R.drawable.back)
+                    //Hacemos que la primera vuelva a ser clicable
+                    if (idIvPrimeraCarta != null) {
+                        idIvPrimeraCarta.isClickable = true
+                    }
                     // La segunda carta también boca abajo
                     iv.setImageResource(R.drawable.back)
                     // Reset
