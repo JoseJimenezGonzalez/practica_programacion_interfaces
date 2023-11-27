@@ -7,6 +7,7 @@ import android.os.Handler
 import android.view.View
 import android.widget.ImageView
 import com.example.practica.databinding.ActivityMainBinding
+import java.util.concurrent.Semaphore
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,6 +16,8 @@ class MainActivity : AppCompatActivity() {
     var vidas = 15
 
     var aciertos = 0
+
+    private val semaphore = Semaphore(2)
 
     val posicionescartas = listOf(
         Pair(0, 0),
@@ -97,41 +100,64 @@ class MainActivity : AppCompatActivity() {
 
     private fun configurarBotones() {
         binding.iv1.setOnClickListener {
-            procesarClickEnCarta(posicionescartas[0], binding.iv1)
-
+            if(valorPrimeraCartaGirada.equals("") || valorSegundaCartaGirada.equals("")){
+                procesarClickEnCarta(posicionescartas[0], binding.iv1)
+            }
         }
         binding.iv2.setOnClickListener {
-            procesarClickEnCarta(posicionescartas[1], binding.iv2)
+            if(valorPrimeraCartaGirada.equals("") || valorSegundaCartaGirada.equals("")){
+                procesarClickEnCarta(posicionescartas[1], binding.iv2)
+            }
         }
         binding.iv3.setOnClickListener {
-            procesarClickEnCarta(posicionescartas[2], binding.iv3)
+            if(valorPrimeraCartaGirada.equals("") || valorSegundaCartaGirada.equals("")){
+                procesarClickEnCarta(posicionescartas[2], binding.iv3)
+            }
         }
         binding.iv4.setOnClickListener {
-            procesarClickEnCarta(posicionescartas[3], binding.iv4)
+            if(valorPrimeraCartaGirada.equals("") || valorSegundaCartaGirada.equals("")){
+                procesarClickEnCarta(posicionescartas[3], binding.iv4)
+            }
         }
         binding.iv5.setOnClickListener {
-            procesarClickEnCarta(posicionescartas[4], binding.iv5)
+            if(valorPrimeraCartaGirada.equals("") || valorSegundaCartaGirada.equals("")){
+                procesarClickEnCarta(posicionescartas[4], binding.iv5)
+            }
         }
         binding.iv6.setOnClickListener {
-            procesarClickEnCarta(posicionescartas[5], binding.iv6)
+            if(valorPrimeraCartaGirada.equals("") || valorSegundaCartaGirada.equals("")){
+                procesarClickEnCarta(posicionescartas[5], binding.iv6)
+            }
         }
         binding.iv7.setOnClickListener {
-            procesarClickEnCarta(posicionescartas[6], binding.iv7)
+            if(valorPrimeraCartaGirada.equals("") || valorSegundaCartaGirada.equals("")){
+                procesarClickEnCarta(posicionescartas[6], binding.iv7)
+            }
         }
         binding.iv8.setOnClickListener {
-            procesarClickEnCarta(posicionescartas[7], binding.iv8)
+            if(valorPrimeraCartaGirada.equals("") || valorSegundaCartaGirada.equals("")){
+                procesarClickEnCarta(posicionescartas[7], binding.iv8)
+            }
         }
         binding.iv9.setOnClickListener {
-            procesarClickEnCarta(posicionescartas[8], binding.iv9)
+            if(valorPrimeraCartaGirada.equals("") || valorSegundaCartaGirada.equals("")){
+                procesarClickEnCarta(posicionescartas[8], binding.iv9)
+            }
         }
         binding.iv10.setOnClickListener {
-            procesarClickEnCarta(posicionescartas[9], binding.iv10)
+            if(valorPrimeraCartaGirada.equals("") || valorSegundaCartaGirada.equals("")){
+                procesarClickEnCarta(posicionescartas[9], binding.iv10)
+            }
         }
         binding.iv11.setOnClickListener {
-            procesarClickEnCarta(posicionescartas[10], binding.iv11)
+            if(valorPrimeraCartaGirada.equals("") || valorSegundaCartaGirada.equals("")){
+                procesarClickEnCarta(posicionescartas[10], binding.iv11)
+            }
         }
         binding.iv12.setOnClickListener {
-            procesarClickEnCarta(posicionescartas[11], binding.iv12)
+            if(valorPrimeraCartaGirada.equals("") || valorSegundaCartaGirada.equals("")){
+                procesarClickEnCarta(posicionescartas[11], binding.iv12)
+            }
         }
     }
 
